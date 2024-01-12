@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
 import RepoArea from "./RepoArea";
-import ChangesArea from "./ChangesArea";
+import DiffsArea from "./DiffsArea";
 
 export default function InteractiveArea(){
+    const [directoryDiffs, setDirectoryDiffs] = useState(["fileA", "fileB", "fileC"])
+
     return(
         <div className={"area-container"}>
-            <ChangesArea type="working-directory"/>
-            <ChangesArea type="staging-area"/>
+            <DiffsArea type="working-directory" diffs={directoryDiffs}/>
+            <DiffsArea type="staging-area"/>
             <RepoArea type="commits"/>
             <RepoArea type="remote-repo"/>
         </div>
