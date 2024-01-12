@@ -13,9 +13,23 @@
   }
 }
 
+.area-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.area {
+  background-color: blue;
+  width: 20%;
+  height: 40vh;
+  margin-top: 5vh;
+  color: white;
+  border-radius: 3vh;
+}
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +38,3 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
