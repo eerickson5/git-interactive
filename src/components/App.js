@@ -1,5 +1,6 @@
 import './App.css';
 import InteractiveArea from './InteractiveArea';
+import TerminalDashboard from './TerminalDashboard';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       </header>
       <body>
         <InteractiveArea/>
+        <TerminalDashboard/>
       </body>
     </div>
   );

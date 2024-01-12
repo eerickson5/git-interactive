@@ -7,9 +7,9 @@ export default function RepoArea({type, versions}){
         <div>
             <h2>{type}</h2>
             <div className="area">
-            <List celled animated inverted relaxed>
+            <List divided animated inverted relaxed>
                 {!!versions
-                ? versions.map( v => <Version version={v}/>)
+                ? versions.map( v => <Version version={v}  key={v.sha}/>)
                 : <p>None</p>}
             </List>
             </div>
