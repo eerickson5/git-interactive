@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Segment, FormInput, FormGroup, Form } from 'semantic-ui-react'
+import { Button, Segment } from 'semantic-ui-react'
 import FileChanger from "./FileChanger";
 
 export default function TerminalDashboard({consoleOutput}){
