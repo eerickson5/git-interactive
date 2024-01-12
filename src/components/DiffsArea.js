@@ -10,9 +10,10 @@ export default function DiffsArea({type, diffs}){
             <List divided relaxed animated verticalAlign='middle'>
                 { !!diffs 
                 ? diffs.map(diff => <ListItem icon='write' content={diff} key={diff}/>)
-                : <p>None yet</p>
+                : <p>...</p>
                 }
-                </List>
+            </List>
+            
             </Segment>
         </div>
         

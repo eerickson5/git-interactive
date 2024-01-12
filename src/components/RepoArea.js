@@ -11,7 +11,7 @@ export default function RepoArea({type, versions}){
                 <List divided animated relaxed>
                     {!!versions
                     ? versions.map( v => <Version version={v}  key={v.sha}/>)
-                    : <p>None</p>}
+                    : <p>...</p>}
                 </List>
             </Segment>
         </div>

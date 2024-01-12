@@ -8,10 +8,9 @@ function App() {
       <header className="App-header">
         <h1>git-interactive</h1>
       </header>
-      <body>
-        <InteractiveArea/>
-        <TerminalDashboard/>
-      </body>
+      
+      <InteractiveArea/>
+      <TerminalDashboard/>
     </div>
   );
 }

@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -45,5 +48,11 @@ h2{
 .terminal-dashboard{
   background-color: silver;
   margin: 5vw;
+  width: 80vw;
+  align-self: center;
   border-radius: 10px;
+}
+
+.buttons-container{
+  margin-bottom: 10px;
 }
