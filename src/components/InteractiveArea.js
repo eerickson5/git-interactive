@@ -12,7 +12,7 @@ export default function InteractiveArea(){
     const [remoteCommits, setRemoteCommits] = useState([{sha: "Hi", diffs: ["fileG", "fileH", "fileI"]}])
 
     return(
-        <div className={"area-container"}>
+        <div className={"areas-container"}>
             <DiffsArea type="working-directory" diffs={directoryDiffs}/>
             <DiffsArea type="staging-area"/>
             <RepoArea type="local-repo" versions={localCommits}/>
