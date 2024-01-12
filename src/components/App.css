@@ -24,10 +24,10 @@ h2{
 }
 
 .area {
-  background-color: steelblue;
+  /* background-color: steelblue; */
   width: 20vw;
   height: 40vh;
-  color: white;
+  /* color: white; */
   border-radius: 3vh;
   padding: 5px;
 }
@@ -42,3 +42,8 @@ h2{
   color: white;
 }
 
+.terminal-dashboard{
+  background-color: silver;
+  margin: 5vw;
+  border-radius: 10px;
+}

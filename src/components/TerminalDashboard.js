@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from 'semantic-ui-react'
+import { Button, Segment } from 'semantic-ui-react'
 
 export default function TerminalDashboard(){
     return (
@@ -10,7 +10,10 @@ export default function TerminalDashboard(){
                 <Button color='purple'>git push</Button>
             </div>
         
+        <Segment raised>
             <h2>Console Output</h2>
+        </Segment>
+            
         </div>
     )
 }
