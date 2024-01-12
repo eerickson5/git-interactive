@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { List, ListItem, Segment} from "semantic-ui-react";
-export default function DiffsArea({type, diffs}){
 
+export default function DiffsArea({type, diffs}){
     return(
         <div>
 
@@ -13,7 +13,6 @@ export default function DiffsArea({type, diffs}){
                 : <p>...</p>
                 }
             </List>
-            
             </Segment>
         </div>
         
