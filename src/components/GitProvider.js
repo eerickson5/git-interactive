@@ -9,12 +9,20 @@ export function GitProvider({children}){
     const [remoteCommits, setRemoteCommits] = useState([])
 
     const addFileToDirectory = (fileName) => {
+        if(fileName.length < 5){
+            return("[console]   File name is too short.")
+        }
+
         if(!directoryDiffs.includes(fileName)){
             setDirectoryDiffs([...directoryDiffs, fileName])
+            return("")
         }
     }
 
     const moveFilesToStaging = () => {
+        if(directoryDiffs.length < 1){
+            return("[console]   No files to add.")
+        }
         setStagedDiffs([...stagedDiffs, ...directoryDiffs]);
         setDirectoryDiffs([])
     }
@@ -27,6 +35,7 @@ export function GitProvider({children}){
 
         setLocalCommits([...localCommits, newCommit])
         setStagedDiffs([])
+        return(`[main ${newCommit.sha}]   ${newCommit.diffs.length} files changed`)
     }
 
     const commitFilesToRemote = () => {
