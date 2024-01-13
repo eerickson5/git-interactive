@@ -46,7 +46,7 @@ export function GitProvider({children}){
 
     const commitFilesToRemote = () => {
         if(localCommits.length < 1){
-            return("Everything up-to-date")
+            return("[console] Everything up-to-date")
         }
 
         const firstCommit = localCommits[0].sha
@@ -54,8 +54,8 @@ export function GitProvider({children}){
 
         setRemoteCommits([...remoteCommits, ...localCommits])
         setLocalCommits([])
-        
-        return(`${firstCommit}..${lastCommit}  main -> main`)
+
+        return(`[console] ${firstCommit}..${lastCommit}  main -> main`)
     }
 
 

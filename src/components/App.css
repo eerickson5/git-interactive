@@ -29,7 +29,7 @@ h2{
 .area {
   /* background-color: steelblue; */
   width: 20vw;
-  height: 40vh;
+  min-height: 40vh;
   /* color: white; */
   border-radius: 3vh;
   padding: 5px;
