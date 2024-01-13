@@ -1,7 +1,7 @@
 import React, {createContext, useState} from "react";
 
-const GitContext = React.createContext();
-export default function GitProvider({children}){
+export const GitContext = createContext();
+export function GitProvider({children}){
 
     const [directoryDiffs, setDirectoryDiffs] = useState(["fileA", "fileB", "fileC"])
     const [stagedDiffs, setStagedDiffs] = useState(["fileD", "fileE", "fileF"])

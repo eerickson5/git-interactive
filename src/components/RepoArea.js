@@ -1,9 +1,11 @@
-import React from "react";
-import { List, ListItem, ListContent, ListIcon, ListHeader } from "semantic-ui-react";
+import React, {useContext} from "react";
+import { GitContext } from "./GitProvider";
+import { List } from "semantic-ui-react";
 import Version from "./Version";
 import { Segment } from 'semantic-ui-react'
 
-export default function RepoArea({type, versions}){
+export default function RepoArea({type}){
+    const [versions, setVersions] = React.useContext(GitContext)[type]
     return(
         <div>
             <h2>{type}</h2>
