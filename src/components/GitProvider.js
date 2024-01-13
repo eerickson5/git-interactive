@@ -21,13 +21,18 @@ export function GitProvider({children}){
 
     const moveFilesToStaging = () => {
         if(directoryDiffs.length < 1){
-            return("[console]   No files to add.")
+            return("[console]   No changes to add.")
         }
         setStagedDiffs([...stagedDiffs, ...directoryDiffs]);
         setDirectoryDiffs([])
+        return("")
     }
 
     const commitFilesToLocal = () => {
+        if(stagedDiffs.length < 1){
+            return("[console]   Changes not staged for commit. No changes added to commit (use \"git add\")")
+        }
+
         const newCommit = {
             sha: Math.random().toString(36).slice(2, 8),
             diffs: stagedDiffs
@@ -35,12 +40,22 @@ export function GitProvider({children}){
 
         setLocalCommits([...localCommits, newCommit])
         setStagedDiffs([])
-        return(`[main ${newCommit.sha}]   ${newCommit.diffs.length} files changed`)
+        return(`[main ${newCommit.sha}]   ${newCommit.diffs.length} files changed. Your branch is ahead of 'origin/main' by ${localCommits.length} commits.
+        (use "git push" to publish your local commits)`)
     }
 
     const commitFilesToRemote = () => {
+        if(localCommits.length < 1){
+            return("Everything up-to-date")
+        }
+
+        const firstCommit = localCommits[0].sha
+        const lastCommit = localCommits[localCommits.length - 1].sha
+
         setRemoteCommits([...remoteCommits, ...localCommits])
         setLocalCommits([])
+        
+        return(`${firstCommit}..${lastCommit}  main -> main`)
     }
 
 
