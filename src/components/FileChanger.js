@@ -24,7 +24,6 @@ export default function FileChanger(){
             placeholder='file name'
             name='name'
             label={{ basic: true, content: 'Make changes to a file...' }}
-            inline
             action={"submit"}
             value={fileName}
             onChange={ (e) => handleInputChange(e.target.value)}

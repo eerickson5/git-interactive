@@ -3,16 +3,15 @@ import React, {createContext, useState} from "react";
 export const GitContext = createContext();
 export function GitProvider({children}){
 
-    const [directoryDiffs, setDirectoryDiffs] = useState(["fileA", "fileB", "fileC"])
-    const [stagedDiffs, setStagedDiffs] = useState(["fileD", "fileE", "fileF"])
-    const [localCommits, setLocalCommits] = useState([
-        {sha: "ABC", diffs: ["fileG", "fileH", "fileI"]},
-        {sha: "DEF", diffs: ["fileG", "fileH", "fileI"]},
-    ])
-    const [remoteCommits, setRemoteCommits] = useState([{sha: "Hi", diffs: ["fileG", "fileH", "fileI"]}])
+    const [directoryDiffs, setDirectoryDiffs] = useState([])
+    const [stagedDiffs, setStagedDiffs] = useState([])
+    const [localCommits, setLocalCommits] = useState([])
+    const [remoteCommits, setRemoteCommits] = useState([])
 
     const addFileToDirectory = (fileName) => {
-        setDirectoryDiffs([...directoryDiffs, fileName])
+        if(!directoryDiffs.includes(fileName)){
+            setDirectoryDiffs([...directoryDiffs, fileName])
+        }
     }
 
     const moveFilesToStaging = () => {
