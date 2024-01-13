@@ -5,7 +5,7 @@ import { GitContext } from "./GitProvider";
 export default function FileChanger(){
 
   const [fileName, setFileName] = useState("")
-  const {addFile} = useContext(GitContext)
+  const {addFileToDirectory} = useContext(GitContext)
 
   const handleInputChange = (input) =>{
     input = input.replace(/\s+/g, '');
@@ -14,7 +14,7 @@ export default function FileChanger(){
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    addFile(fileName)
+    addFileToDirectory(fileName)
     setFileName("")
   }
 

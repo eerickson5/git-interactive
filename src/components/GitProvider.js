@@ -10,16 +10,41 @@ export function GitProvider({children}){
         {sha: "DEF", diffs: ["fileG", "fileH", "fileI"]},
     ])
     const [remoteCommits, setRemoteCommits] = useState([{sha: "Hi", diffs: ["fileG", "fileH", "fileI"]}])
-    const addFile = (fileName) => {
+
+    const addFileToDirectory = (fileName) => {
         setDirectoryDiffs([...directoryDiffs, fileName])
     }
+
+    const moveFilesToStaging = () => {
+        setStagedDiffs([...stagedDiffs, ...directoryDiffs]);
+        setDirectoryDiffs([])
+    }
+
+    const commitFilesToLocal = () => {
+        const newCommit = {
+            sha: Math.random().toString(36).slice(2, 8),
+            diffs: stagedDiffs
+        }
+
+        setLocalCommits([...localCommits, newCommit])
+        setStagedDiffs([])
+    }
+
+    const commitFilesToRemote = () => {
+        setRemoteCommits([...remoteCommits, ...localCommits])
+        setLocalCommits([])
+    }
+
 
     const currentGit = {
         "working-directory": directoryDiffs,
         "staging-area": stagedDiffs,
         "local-repo": localCommits,
         "remote-repo": remoteCommits,
-        addFile
+        addFileToDirectory,
+        moveFilesToStaging,
+        commitFilesToLocal,
+        commitFilesToRemote
     }
 
     return(
