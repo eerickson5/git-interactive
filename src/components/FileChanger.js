@@ -7,13 +7,19 @@ export default function FileChanger(){
   const [fileName, setFileName] = useState("")
   const {addFile} = useContext(GitContext)
 
+  const handleInputChange = (input) =>{
+    input = input.replace(/\s+/g, '');
+    setFileName(input)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    addFile(fileName)
+    setFileName("")
+  }
+
     return (
-        <form onSubmit={e => {
-            e.preventDefault()
-            addFile(fileName)
-            setFileName("")
-          }
-        }>
+        <form onSubmit={handleSubmit}>
           <Input
             placeholder='file name'
             name='name'
@@ -21,7 +27,7 @@ export default function FileChanger(){
             inline
             action={"submit"}
             value={fileName}
-            onChange={ (e) => setFileName(e.target.value)}
+            onChange={ (e) => handleInputChange(e.target.value)}
           />
       </form>
     )
