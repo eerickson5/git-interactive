@@ -4,7 +4,7 @@ import { GitContext } from "./GitProvider";
 
 export default function DiffsArea({type}){
 
-    const [diffs, setDiffs] = React.useContext(GitContext)[type]
+    const diffs = React.useContext(GitContext)[type]
 
     return(
         <div>

@@ -12,10 +12,10 @@ export function GitProvider({children}){
     const [remoteCommits, setRemoteCommits] = useState([{sha: "Hi", diffs: ["fileG", "fileH", "fileI"]}])
 
     const currentGit = {
-        "working-directory": [directoryDiffs, setDirectoryDiffs],
-        "staging-area": [stagedDiffs, setStagedDiffs],
-        "local-repo": [localCommits, setLocalCommits],
-        "remote-repo": [remoteCommits, setRemoteCommits],
+        "working-directory": directoryDiffs,
+        "staging-area": stagedDiffs,
+        "local-repo": localCommits,
+        "remote-repo": remoteCommits,
     }
 
     return(

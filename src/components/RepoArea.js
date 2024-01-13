@@ -5,7 +5,7 @@ import Version from "./Version";
 import { Segment } from 'semantic-ui-react'
 
 export default function RepoArea({type}){
-    const [versions, setVersions] = React.useContext(GitContext)[type]
+    const versions = React.useContext(GitContext)[type]
     return(
         <div>
             <h2>{type}</h2>
