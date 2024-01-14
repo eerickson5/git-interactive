@@ -2,13 +2,13 @@ import React, {useContext} from "react";
 import { List, ListItem, Segment} from "semantic-ui-react";
 import { GitContext } from "./GitProvider";
 
-export default function DiffsArea({type}){
+export default function DiffsArea({type, name}){
 
     const diffs = React.useContext(GitContext)[type]
 
     return(
         <div>
-            <h2>{type}</h2>
+            <h2>{name}</h2>
             <Segment raised className="area">
             <List divided relaxed animated verticalAlign='middle'>
                 { !!diffs 

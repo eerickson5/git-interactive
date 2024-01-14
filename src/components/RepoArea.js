@@ -4,11 +4,11 @@ import { List } from "semantic-ui-react";
 import Version from "./Version";
 import { Segment } from 'semantic-ui-react'
 
-export default function RepoArea({type}){
+export default function RepoArea({type, name}){
     const versions = React.useContext(GitContext)[type]
     return(
         <div>
-            <h2>{type}</h2>
+            <h2>{name}</h2>
             <Segment raised className="area">
                 <List divided animated relaxed>
                     {!!versions
