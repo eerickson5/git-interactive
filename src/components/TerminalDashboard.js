@@ -1,5 +1,5 @@
 import React, {useContext, useState} from "react";
-import { Button, Segment, Input } from 'semantic-ui-react'
+import { Button, Segment } from 'semantic-ui-react'
 import FileChanger from "./FileChanger";
 import { GitContext } from "./GitProvider";
 

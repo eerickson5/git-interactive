@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React from "react";
 import { GitContext } from "./GitProvider";
 import { List } from "semantic-ui-react";
 import Version from "./Version";
