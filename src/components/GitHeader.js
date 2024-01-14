@@ -6,9 +6,12 @@ export default function GitHeader(){
     return(
         <div className="header-container">
             <div className="horizontal">
-                <h1>git-interactive</h1>
-                <Icon name='github'/>
+                    <h1>git-interactive</h1>
+                <a href="https://github.com/eerickson5/git-interactive">
+                    <Icon name='github' color="purple"/>
+                </a>
             </div>
+            
             
 
             <h4>a visual tool for understanding version control with git.</h4>
