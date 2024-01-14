@@ -16,7 +16,7 @@ export default function TerminalDashboard(){
     return (
         <Segment raised inverted className="terminal-dashboard">
 
-            <h2>Terminal Dashboard</h2>
+            <h1>Terminal Dashboard</h1>
             <FileChanger onSetConsole={setConsoleMessage}/>
             <div className="buttons-container">
                 <Button color='purple' onClick={() => handleClick(moveFilesToStaging)}>git add</Button>

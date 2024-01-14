@@ -1,6 +1,7 @@
 import './App.css';
 import InteractiveArea from './InteractiveArea';
 import TerminalDashboard from './TerminalDashboard';
+import Terminal from './Terminal';
 import {GitProvider} from './GitProvider';
 import {Icon} from 'semantic-ui-react'
 
@@ -15,6 +16,7 @@ function App() {
 
         <InteractiveArea/>
         <TerminalDashboard/>
+        <Terminal/>
       </div>
     </GitProvider>
     
