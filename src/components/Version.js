@@ -8,7 +8,7 @@ export default function Version({version}){
             <ListIcon name='inbox'/>
             <ListContent >
                 <ListHeader>
-                    {`[${version.sha}] ${version.message}`}
+                    {`[${version.sha}] ${version.message ?? ""}`}
                 </ListHeader>
                 <p>{version.diffs.join(", ")}</p>
             </ListContent>
