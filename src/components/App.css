@@ -3,6 +3,7 @@
   align-items: stretch;
   display: flex;
   flex-direction: column;
+  padding-bottom: 10vh;
 }
 
 .App-logo {
