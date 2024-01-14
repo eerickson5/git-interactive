@@ -19,9 +19,9 @@ export default function TerminalDashboard(){
             <h1>Terminal Dashboard</h1>
             <FileChanger onSetConsole={setConsoleMessage}/>
             <div className="buttons-container">
-                <Button color='purple' onClick={() => handleClick(moveFilesToStaging)}>git add</Button>
-                <Button color='purple' onClick={() => handleClick(commitFilesToLocal)}>git commit</Button>
-                <Button color='purple' onClick={() => handleClick(commitFilesToRemote)}>git push</Button>
+                <Button color='purple' size="large" onClick={() => handleClick(moveFilesToStaging)}>git add</Button>
+                <Button color='purple' size="large" onClick={() => handleClick(commitFilesToLocal)}>git commit</Button>
+                <Button color='purple' size="large" onClick={() => handleClick(commitFilesToRemote)}>git push</Button>
             </div>
             <h3>{consoleMessage}</h3>
         </Segment>

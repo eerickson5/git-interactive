@@ -4,6 +4,7 @@ import TerminalDashboard from './TerminalDashboard';
 import Terminal from './Terminal';
 import {GitProvider} from './GitProvider';
 import GitHeader from './GitHeader';
+import TerminalsContainer from './TerminalsContainer';
 
 function App() {
   return (
@@ -14,8 +15,7 @@ function App() {
         </header>
 
         <InteractiveArea/>
-        <TerminalDashboard/>
-        <Terminal/>
+        <TerminalsContainer/>
       </div>
     </GitProvider>
     

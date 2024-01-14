@@ -53,7 +53,7 @@ export default function Terminal(){
 
             <h1>Terminal</h1>
             <FileChanger onSetConsole={setConsoleMessage}/>
-            <h3>then</h3>
+            
             <form className={"terminal-input"} onSubmit={handleSubmit}>
                 <Input
                 placeholder='...'

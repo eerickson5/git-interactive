@@ -77,6 +77,13 @@ h2{
   width: 75vh
 }
 
+.terminals-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: center;
+}
+
 .buttons-container{
   margin-bottom: 10px;
   margin-top: 15px;
