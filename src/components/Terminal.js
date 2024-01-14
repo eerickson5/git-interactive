@@ -12,23 +12,40 @@ export default function Terminal(){
     const handleSubmit = (e) => {
         e.preventDefault();
         if(terminalInput.slice(0, 7) === "git add"){
-            const endSlice = terminalInput.slice(7).trim()
-            endSlice === "."
-            ? setConsoleMessage(moveFilesToStaging())
-            : setConsoleMessage("[console] adding individual files is not yet supported. Use ' git add . ' instead")
+            handleAsAdd(terminalInput.slice(7).trim())
         } else if (terminalInput.slice(0, 10) === "git commit"){
-            const endSlice = terminalInput.slice(10)
-
-            endSlice.slice(0, 4) === " -m " && endSlice.length > 4
-            ? setConsoleMessage(commitFilesToLocal)
-            //add the message!!
-            : setConsoleMessage("[console] Aborting commit due to empty commit message.")
+            handleAsCommit(terminalInput.slice(10))
         } else if (terminalInput.trim() === "git push"){
             setConsoleMessage(commitFilesToRemote())
         } else {
             setConsoleMessage(`[console] ' ${terminalInput} ' is not a git command.`)
         }
         setTerminalInput("")
+    }
+
+    const handleAsAdd = (endSlice) => {
+        endSlice === "."
+        ? setConsoleMessage(moveFilesToStaging())
+        : setConsoleMessage("[console] adding individual files is not yet supported. Use ' git add . ' instead")
+    }
+
+    const handleAsCommit = (endSlice) => {
+        if (endSlice.slice(0, 4) === " -m " && endSlice.length > 6){
+
+            const possibleMessage = endSlice.slice(4).trim()
+            if(possibleMessage.length > 2
+                && possibleMessage.at(0) === possibleMessage.at(-1) 
+                && (possibleMessage.at(0) === "'" || possibleMessage.at(0) === '"')
+                ){
+
+                const message = possibleMessage.slice(1, -1)
+                setConsoleMessage(commitFilesToLocal(message))
+            } else {
+                setConsoleMessage(`Please wrap your message in quotes.`)
+            }
+        } else {
+            setConsoleMessage("[console] Aborting commit due to empty commit message.")
+        }
     }
 
     return (
