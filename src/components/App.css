@@ -21,6 +21,18 @@ h2{
   margin-top: 5vh;
 }
 
+.header-container{
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.horizontal{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .areas-container {
   display: flex;
   flex-direction: row;
