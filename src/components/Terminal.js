@@ -18,7 +18,7 @@ export default function Terminal(){
             : setConsoleMessage("[console] adding individual files is not yet supported. Use ' git add . ' instead")
         } else if (terminalInput.slice(0, 10) === "git commit"){
             const endSlice = terminalInput.slice(10)
-            
+
             endSlice.slice(0, 4) === " -m " && endSlice.length > 4
             ? setConsoleMessage(commitFilesToLocal)
             //add the message!!
@@ -28,6 +28,7 @@ export default function Terminal(){
         } else {
             setConsoleMessage(`[console] ' ${terminalInput} ' is not a git command.`)
         }
+        setTerminalInput("")
     }
 
     return (

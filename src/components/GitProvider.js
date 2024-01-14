@@ -28,19 +28,20 @@ export function GitProvider({children}){
         return("")
     }
 
-    const commitFilesToLocal = () => {
+    const commitFilesToLocal = (message) => {
         if(stagedDiffs.length < 1){
             return("[console]   Changes not staged for commit. No changes added to commit (use \"git add\")")
         }
 
         const newCommit = {
             sha: Math.random().toString(36).slice(2, 8),
-            diffs: stagedDiffs
+            diffs: stagedDiffs,
         }
+        message && (newCommit.message = message)
 
         setLocalCommits([...localCommits, newCommit])
         setStagedDiffs([])
-        return(`[main ${newCommit.sha}]   ${newCommit.diffs.length} files changed. Your branch is ahead of 'origin/main' by ${localCommits.length} commits.
+        return(`[main ${newCommit.sha}] ${message}.  ${newCommit.diffs.length} files changed. Your branch is ahead of 'origin/main' by ${localCommits.length} commits.
         (use "git push" to publish your local commits)`)
     }
 
