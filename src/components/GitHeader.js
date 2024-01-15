@@ -1,5 +1,5 @@
 import React from "react";
-
+import NavBar from "./NavBar";
 import {Icon} from 'semantic-ui-react'
 
 export default function GitHeader(){
@@ -12,7 +12,7 @@ export default function GitHeader(){
                 </a>
             </div>
             
-            
+            {/* <NavBar/> */}
 
             <h4>a visual tool for understanding version control with git.</h4>
         </div>
