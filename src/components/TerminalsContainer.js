@@ -21,7 +21,9 @@ export default function TerminalsContainer(){
             content='Switch Terminals' 
             icon='terminal' 
             labelPosition='left' 
-            onClick={() => setIsDashboard(!isDashboard)}/>
+            onClick={() => setIsDashboard(!isDashboard)}
+            />
+
             {isDashboard
             ? <TerminalDashboard/>
             : <Terminal/>

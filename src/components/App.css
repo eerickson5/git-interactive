@@ -85,7 +85,7 @@ h2{
 .terminals-container{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   align-self: center;
 }
 
