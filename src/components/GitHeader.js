@@ -12,9 +12,12 @@ export default function GitHeader(){
                 </a>
             </div>
             
-            {/* <NavBar/> */}
-
             <h4>a visual tool for understanding version control with git.</h4>
+
+            <div style={{marginTop: "2vh"}}>
+                <NavBar/>
+            </div>
+
         </div>
     )
 }
