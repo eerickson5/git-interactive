@@ -7,8 +7,8 @@ export default function AboutMe(){
             <h1>about git-interactive</h1>
             <h5> 
                 My name is Elise and I'm currently studying software engineering at Flatiron School.  
-                We learned that GitHub is a make-or-break platfom for developers, but we had little instruction about how it actually worked.
-                We learned the commands, but it was hard for me to remember them without understanding what they actually did.
+                We learned that GitHub is a make-or-break platform for developers, but we had little instruction about how it actually worked.
+                We learned the git commands, but it was hard for me to remember them without understanding what they actually did.
             </h5>
 
             <iframe title="thinking lady" src="https://giphy.com/embed/WRQBXSCnEFJIuxktnw" width="240" height="153" frameBorder="0" class="giphy-embed"></iframe>
