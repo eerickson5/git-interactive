@@ -3,7 +3,7 @@
   align-items: stretch;
   display: flex;
   flex-direction: column;
-  padding-bottom: 10vh;
+  padding-bottom: 5vh;
 }
 
 .App-logo {
@@ -37,7 +37,6 @@ h2{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-top: 3vh;
   padding-bottom: 3vh;
 }
 
@@ -48,6 +47,12 @@ h2{
   /* color: white; */
   border-radius: 3vh;
   padding: 5px;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-header {

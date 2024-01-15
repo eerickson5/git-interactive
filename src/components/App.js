@@ -1,10 +1,7 @@
 import './App.css';
-import InteractiveArea from './InteractiveArea';
-import TerminalDashboard from './TerminalDashboard';
-import Terminal from './Terminal';
 import {GitProvider} from './GitProvider';
 import GitHeader from './GitHeader';
-import TerminalsContainer from './TerminalsContainer';
+import Home from './Home';
 
 function App() {
   return (
@@ -13,10 +10,8 @@ function App() {
         <header className="App-header">
           <GitHeader/>
         </header>
-
-        <InteractiveArea/>
-        <TerminalsContainer/>
       </div>
+      <Home/>
     </GitProvider>
     
   );

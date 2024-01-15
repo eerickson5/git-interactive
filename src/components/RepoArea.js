@@ -7,7 +7,7 @@ import { Segment } from 'semantic-ui-react'
 export default function RepoArea({type, name}){
     const versions = React.useContext(GitContext)[type]
     return(
-        <div>
+        <div className='centered'>
             <h2>{name}</h2>
             <Segment raised className="area">
                 <List divided animated relaxed>

@@ -7,7 +7,7 @@ export default function DiffsArea({type, name}){
     const diffs = React.useContext(GitContext)[type]
 
     return(
-        <div>
+        <div className='centered'>
             <h2>{name}</h2>
             <Segment raised className="area">
             <List divided relaxed animated verticalAlign='middle'>
