@@ -2,6 +2,11 @@ import './App.css';
 import {GitProvider} from './GitProvider';
 import GitHeader from './GitHeader';
 import Home from './Home';
+import  { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {path: '/', element: <Home/>}
+])
 
 function App() {
   return (
@@ -11,7 +16,8 @@ function App() {
           <GitHeader/>
         </header>
       </div>
-      <Home/>
+
+      <RouterProvider router={router}/>
     </GitProvider>
     
   );
