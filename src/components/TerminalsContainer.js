@@ -4,7 +4,7 @@ import Terminal from "./Terminal";
  import { Button } from 'semantic-ui-react'
 
 export default function TerminalsContainer(){
-    const [isDashboard, setIsDashboard] = useState(false)
+    const [isDashboard, setIsDashboard] = useState(true)
 
     // if(isDashboard){
     //     return (<TerminalDashboard/>)
