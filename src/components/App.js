@@ -4,10 +4,12 @@ import GitHeader from './GitHeader';
 import Home from './Home';
 import  { createBrowserRouter, Router, RouterProvider } from "react-router-dom";
 import AboutMe from './AboutMe';
+import AboutGit from './AboutGit';
 
 const router = createBrowserRouter([
   {path: '/', element: <Home/>},
-  {path: '/about', element: <AboutMe/>}
+  {path: '/about', element: <AboutMe/>},
+  {path: '/learn', element: <AboutGit/>}
 ])
 
 function App() {
