@@ -4,7 +4,7 @@ import { Container } from "semantic-ui-react";
 export default function AboutMe(){
     return(
         <Container>
-            <h1>about git-interactive</h1>
+            <h1 style={{marginTop: '5vh'}}>about git-interactive</h1>
             <h5> 
                 My name is Elise and I'm currently studying software engineering at Flatiron School.  
                 We learned that GitHub is a make-or-break platform for developers, but we had little instruction about how it actually worked.
