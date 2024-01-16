@@ -1,6 +1,6 @@
 import React from "react";
-import TerminalsContainer from './TerminalsContainer';
-import InteractiveArea from './InteractiveArea';
+import TerminalsContainer from '../components/TerminalsContainer';
+import InteractiveArea from '../components/InteractiveArea';
 
 export default function Home(){
     return (
