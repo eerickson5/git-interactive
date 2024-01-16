@@ -9,26 +9,10 @@ export function GitProvider({children}){
     const [remoteCommits, setRemoteCommits] = useState([])
 
     useEffect( () => {
-        fetchAllData();
-    }, [])
-
-    const fetchAllData = () => {
         fetch("http://localhost:3000/working-directory")
         .then( res => res.json() )
         .then( data => setDirectoryDiffs(data))
-
-        fetch("http://localhost:3000/staging-area")
-        .then( res => res.json() )
-        .then( data => setStagedDiffs(data))
-
-        fetch("http://localhost:3000/local-repo")
-        .then( res => res.json() )
-        .then( data => setLocalCommits(data))
-
-        fetch("http://localhost:3000/remote-repo")
-        .then( res => res.json() )
-        .then( data => setRemoteCommits(data))
-    }
+    }, [])
 
     const addFileToDirectory = (fileName) => {
         if(fileName.length < 5){
@@ -54,20 +38,14 @@ export function GitProvider({children}){
         }
 
         directoryDiffs.forEach( diff => {
-            const fileName = diff.fileName;
-            
-            fetch("http://localhost:3000/staging-area/", {
-                method: "POST",
-                headers: {"Content-Type": "application/json"},
-                body: JSON.stringify({fileName})
+            fetch(`http://localhost:3000/working-directory/${diff.id}`, {
+                method: "DELETE",
+                headers: {"Content-Type": "application/json"}
             })
             .then( res => res.json() )
-            .then( data => setStagedDiffs([...stagedDiffs, data]))
-            //setStagedDiffs([...stagedDiffs, ...directoryDiffs]);
+            .then( () => setDirectoryDiffs([]))
         })
-
-        
-        setDirectoryDiffs([])
+        setStagedDiffs([...stagedDiffs, ...directoryDiffs]);
         return("")
     }
 
