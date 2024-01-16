@@ -101,3 +101,7 @@ h2{
   font-size: medium;
   margin-left: 3vw;
 }
+
+#navbar .nav-link .active {
+  color: 'green'
+}
