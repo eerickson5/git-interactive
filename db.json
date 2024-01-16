@@ -1,0 +1,6 @@
+{
+    "working-directory":["myFile.js", "myFile.css"],
+    "staging-area": ["App.js", "index.js"],
+    "local-repo": [],
+    "remote-repo": []
+}

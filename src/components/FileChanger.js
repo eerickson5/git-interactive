@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react";
 import { Input } from 'semantic-ui-react'
-import { GitContext } from "./GitProvider";
+import { GitContext } from "../GitProvider";
 
 export default function FileChanger({onSetConsole}){
 

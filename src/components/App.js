@@ -1,5 +1,5 @@
 import './App.css';
-import {GitProvider} from './GitProvider';
+import {GitProvider} from '../GitProvider';
 import GitHeader from './GitHeader';
 import { Outlet } from 'react-router-dom';
 

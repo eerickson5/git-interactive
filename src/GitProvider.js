@@ -1,4 +1,4 @@
-import React, {createContext, useState} from "react";
+import React, {createContext, useState, useEffect} from "react";
 
 export const GitContext = createContext();
 export function GitProvider({children}){
@@ -7,6 +7,30 @@ export function GitProvider({children}){
     const [stagedDiffs, setStagedDiffs] = useState([])
     const [localCommits, setLocalCommits] = useState([])
     const [remoteCommits, setRemoteCommits] = useState([])
+
+    useEffect( () => {
+        fetchAllData();
+    }, [])
+
+    const fetchAllData = () => {
+        fetch("http://localhost:3000/working-directory")
+        .then( res => res.json() )
+        .then( data => setDirectoryDiffs(data))
+
+        fetch("http://localhost:3000/staging-area")
+        .then( res => res.json() )
+        .then( data => setStagedDiffs(data))
+
+        fetch("http://localhost:3000/local-repo")
+        .then( res => res.json() )
+        .then( data => setLocalCommits(data))
+
+        fetch("http://localhost:3000/remote-repo")
+        .then( res => res.json() )
+        .then( data => setRemoteCommits(data))
+    }
+
+
 
     const addFileToDirectory = (fileName) => {
         if(fileName.length < 5){

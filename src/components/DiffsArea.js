@@ -1,6 +1,6 @@
 import React from "react";
 import { List, ListItem, Segment} from "semantic-ui-react";
-import { GitContext } from "./GitProvider";
+import { GitContext } from "../GitProvider";
 
 export default function DiffsArea({type, name}){
 

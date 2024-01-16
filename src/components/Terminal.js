@@ -1,7 +1,7 @@
 import React, {useContext, useState} from "react";
 import { Segment, Input } from 'semantic-ui-react'
 import FileChanger from "./FileChanger";
-import { GitContext } from "./GitProvider";
+import { GitContext } from "../GitProvider";
 
 export default function Terminal(){
 
