@@ -56,7 +56,7 @@ export function GitProvider({children}){
 
         const newCommit = {
             sha: Math.random().toString(36).slice(2, 8),
-            diffs: stagedDiffs,
+            diffs: stagedDiffs.map(diff => diff.fileName),
         }
         message && (newCommit.message = message)
 
