@@ -30,15 +30,20 @@ export function GitProvider({children}){
         .then( data => setRemoteCommits(data))
     }
 
-
-
     const addFileToDirectory = (fileName) => {
         if(fileName.length < 5){
             return("[console]   File name is too short.")
         }
 
         if(!directoryDiffs.includes(fileName)){
-            setDirectoryDiffs([...directoryDiffs, fileName])
+
+            fetch("http://localhost:3000/working-directory/", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({fileName})
+            })
+            .then( res => res.json() )
+            .then(data => setDirectoryDiffs([...directoryDiffs, data]))
             return("")
         }
     }
@@ -47,7 +52,21 @@ export function GitProvider({children}){
         if(directoryDiffs.length < 1){
             return("[console]   No changes to add.")
         }
-        setStagedDiffs([...stagedDiffs, ...directoryDiffs]);
+
+        directoryDiffs.forEach( diff => {
+            const fileName = diff.fileName;
+            
+            fetch("http://localhost:3000/staging-area/", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({fileName})
+            })
+            .then( res => res.json() )
+            .then( data => setStagedDiffs([...stagedDiffs, data]))
+            //setStagedDiffs([...stagedDiffs, ...directoryDiffs]);
+        })
+
+        
         setDirectoryDiffs([])
         return("")
     }

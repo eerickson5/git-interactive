@@ -12,7 +12,7 @@ export default function DiffsArea({type, name}){
             <Segment raised className="area">
             <List divided relaxed animated verticalAlign='middle'>
                 { !!diffs 
-                ? diffs.map(diff => <ListItem icon='write' content={diff} key={diff}/>)
+                ? diffs.map(diff => <ListItem icon='write' content={diff.fileName} key={diff.id}/>)
                 : <p>...</p>
                 }
             </List>

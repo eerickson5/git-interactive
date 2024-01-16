@@ -1,6 +1,24 @@
 {
-    "working-directory":["myFile.js", "myFile.css"],
-    "staging-area": ["App.js", "index.js"],
-    "local-repo": [],
-    "remote-repo": []
+  "working-directory": [
+    {
+      "id": "9551",
+      "fileName": "file.js"
+    }
+  ],
+  "staging-area": [
+    {
+      "id": "9552",
+      "fileName": "App.js"
+    },
+    {
+      "id": "4379",
+      "fileName": "file.js"
+    },
+    {
+      "id": "ee2f",
+      "fileName": "file.js"
+    }
+  ],
+  "local-repo": [],
+  "remote-repo": []
 }
