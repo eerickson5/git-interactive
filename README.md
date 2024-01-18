@@ -8,7 +8,7 @@ This is a learning-only tool.  It will not modify any of your files.  It just pr
 
 Switch between a visual dashboard and mock terminal to test out version control for GitHub without the mess of a real project.
 
-## Testing
+## Installation
 
 1. Clone the project to your machine
 ```
@@ -22,9 +22,11 @@ git clone https://github.com/eerickson5/git-interactive
  ```
  npm install
  ```
- 4. Run the app on a development server
+ 4. Run the app on a development server on [http://localhost:3000](http://localhost:3000)
  ```
  npm start
  ```
- 5. Open [http://localhost:3000](http://localhost:3000) if it wasn't opened by default
- 
+
+ ## Contributing
+
+ Pull requests are always welcome.  I would love to develop this project with someone and learn that side of git/GitHub as well.
