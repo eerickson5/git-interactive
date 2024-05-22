@@ -2,7 +2,7 @@
 
 A visual tool for understanding version control with git.
 
-![git interactive short demo](https://youtu.be/jlb_CND8R0Y)
+[![git interactive short demo](https://img.youtube.com/vi/jlb_CND8R0Y/0.jpg)](https://youtu.be/jlb_CND8R0Y)
 
 ## 🖲 Description
 
